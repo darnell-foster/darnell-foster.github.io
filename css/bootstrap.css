@@ -5,6 +5,18 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
+/*!
+Bootstrap is a free, open-source CSS framework designed to help developers quickly create responsive and visually appealing websites and web applications. 
+It includes a collection of pre-built HTML, CSS, and JavaScript components, such as buttons, grids, modals, and navigation bars, which can be easily customized.
+
+The bootstrap.css file is the unminified version of the CSS and is human-readable.
+It contains all of Bootstrap’s default styling, including variables for theme colors.
+
+The bootstrap.min.css file is the minified version of bootstrap.css. It has the same content but compressed into a single line to reduce file size.
+Use this to minify the file: https://www.toptal.com/developers/cssminifier
+
+ */
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -19,7 +31,7 @@
   --bs-white: #fff;
   --bs-gray: #6c757d;
   --bs-gray-dark: #343a40;
-  --bs-primary: #F6E05E;
+  --bs-primary: #198754;
   --bs-secondary: #343a40;
   --bs-success: #37BC9B;
   --bs-info: #3BAFDA;
@@ -2866,14 +2878,14 @@ fieldset:disabled .btn {
 
 .btn-primary {
   color: #000;
-  background-color: #F6E05E;
-  border-color: #F6E05E;
+  background-color: #5cb25d;
+  border-color: #000000;
 }
 
 .btn-primary:hover {
   color: #000;
-  background-color: #f7e576;
-  border-color: #f7e36e;
+  background-color: #0f9015;
+  border-color: #000000;
 }
 
 .btn-check:focus + .btn-primary, .btn-primary:focus {

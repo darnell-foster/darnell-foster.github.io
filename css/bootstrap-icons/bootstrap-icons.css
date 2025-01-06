@@ -1,9 +1,12 @@
+/* defines a font called "bootstrap-icons" and specifies the source files and the format (.woff2 and .woff) where the browser can load the font from */
 @font-face {
   font-family: "bootstrap-icons";
   src: url("./fonts/bootstrap-icons.woff2?856008caa5eb66df68595e734e59580d") format("woff2"),
 url("./fonts/bootstrap-icons.woff?856008caa5eb66df68595e734e59580d") format("woff");
 }
 
+/* defines how icons from the font-based icon set are displayed when specific class names are applied */
+/* Targets all elements whose class names start with bi- (e.g., class="bi-alarm") */
 [class^="bi-"]::before,
 [class*=" bi-"]::before {
   display: inline-block;

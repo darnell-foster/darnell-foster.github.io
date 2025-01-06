@@ -40,7 +40,7 @@ html {
 }
 
 .nav-link {
-  font-weight: 700;
+  font-weight: 600;
   color: rgba(0, 0, 0, 0.8) !important;
 }
 
@@ -93,7 +93,7 @@ html {
 }
 
 img.avatar {
-  border-radius: 30px;
+  border-radius: 40px;
 }
 
 /* Masonary grid for portfolio */
@@ -245,7 +245,7 @@ footer a:not(.nav-link) {
   position: absolute;
   bottom: -25px;
   right: -30px;
-  background-image: url("../images/marker_green2.svg");
+  background-image: url("../images/marker_green.svg");
   background-repeat: no-repeat;
 }
 
