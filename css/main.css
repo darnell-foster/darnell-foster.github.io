@@ -269,3 +269,107 @@ footer a:not(.nav-link) {
 .entry-title a {
   text-decoration: none;
 }
+
+/* ============================================================ */
+/* ==================== Experience Timeline =================== */
+/* ============================================================ */
+
+/* ===== Simple, popular portfolio timeline (tl2) ===== */
+:root{
+  --tl2-accent:#007876;            /* your teal */
+  --tl2-spine:#e8f3f2;
+  --tl2-card:#fff;
+  --tl2-shadow:0 10px 30px rgba(0,0,0,.10);
+  --tl2-radius:16px;
+
+  --tl2-gap:clamp(140px, 22vw, 320px); /* card offset from center on desktop */
+  --tl2-dot:14px;                       /* spine dot size */
+}
+
+.tl2{ position:relative; padding:2rem 0; }
+.tl2__spine{
+  position:absolute; inset:0 auto 0 50%; width:6px; transform:translateX(-50%);
+  background:linear-gradient(var(--tl2-spine), #fff); border-radius:3px; z-index:0;
+}
+.tl2__list{
+  position:relative; z-index:2;
+  display:grid; grid-template-columns:1fr; gap:2rem; margin:0; padding:0; list-style:none;
+}
+.tl2__item{
+  position:relative; display:flex; justify-content:center; align-items:center;
+}
+
+/* neat spine dot */
+.tl2__item::before{
+  content:"";
+  position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+  width:var(--tl2-dot); height:var(--tl2-dot); border-radius:999px;
+  background:#fff;
+  box-shadow:inset 0 0 0 3px rgba(0,120,118,.28), 0 2px 6px rgba(0,0,0,.08);
+  z-index:1;
+}
+
+/* card */
+.tl2__card{
+  position:relative; z-index:2;
+  background:var(--tl2-card); border:1px solid rgba(0,0,0,.06);
+  border-radius:var(--tl2-radius); box-shadow:var(--tl2-shadow);
+  width:clamp(280px, 48vw, 520px); max-width:520px; overflow:hidden;
+}
+.tl2--right .tl2__card{ transform:translateX(var(--tl2-gap)); }
+.tl2--left  .tl2__card{ transform:translateX(calc(-1 * var(--tl2-gap))); }
+
+/* summary row */
+.tl2__card > summary{
+  list-style:none; display:flex; align-items:flex-start; gap:.75rem; cursor:pointer;
+  padding:1rem 1.25rem 1rem; position:relative;
+}
+.tl2__card > summary::-webkit-details-marker{ display:none; }
+
+.tl2__title{ padding-right:3.25rem; }
+.tl2__meta{ font-size:.9rem; color:#58666a; display:flex; gap:.5rem; flex-wrap:wrap; }
+.tl2__meta .tl2__company{ font-weight:600; }
+.tl2__meta .tl2__date{ font-weight:700; color:#0f4b4a; }
+
+.tl2__logo{
+  position:absolute; right:1rem; top:1rem; display:grid; place-items:center;
+  width:44px; height:44px; border-radius:999px;
+  background:rgba(0,120,118,.08); box-shadow:inset 0 0 0 2px rgba(0,120,118,.25);
+}
+.tl2__logo img, .tl2__logo i{ max-width:24px; max-height:24px; }
+
+/* body collapsible */
+.tl2__body{
+  padding:0 1.25rem 1.25rem; line-height:1.5;
+  display:grid; grid-template-rows:0fr; transition:grid-template-rows .26s ease;
+}
+.tl2__body > *{ overflow:hidden; }
+.tl2__card[open] .tl2__body{ grid-template-rows:1fr; }
+
+/* soft hover glow (desktop only) */
+@media (hover:hover) and (pointer:fine){
+  .tl2__card:hover{
+    box-shadow:0 18px 50px rgba(0,0,0,.16), 0 8px 16px rgba(0,120,118,.18);
+  }
+}
+
+/* ===== phones (≤640px): single column, left spine, closed by default ===== */
+@media (max-width:640px){
+  .tl2{ padding:1.25rem 0; }
+  .tl2__spine{ left:.5rem; transform:none; width:4px; }
+  .tl2__list{ gap:1rem; padding-left:.75rem; }
+  .tl2__item{ justify-content:flex-start; padding-left:1.25rem; }
+  .tl2__item::before{ left:.5rem; transform:translate(-50%,-50%); }
+
+  .tl2--left .tl2__card,
+  .tl2--right .tl2__card{
+    transform:none; width:100%;
+  }
+
+  .tl2__card{ overflow:hidden; } /* closed by default on phones (JS enforces) */
+}
+
+/* reduced motion */
+@media (prefers-reduced-motion:reduce){
+  .tl2__body{ transition:none; }
+}
