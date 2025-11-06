@@ -607,3 +607,64 @@ footer a:not(.nav-link) {
   box-shadow: 0 0 12px rgba(0, 120, 118, 0.6);
   transform: scale(1.1);
 }
+
+/* === Unified hover strength across cards === */
+:root{
+  /* one place to tune the feel */
+  --card-shadow-rest: 0 6px 18px rgba(0,0,0,.08);
+  --card-shadow-hover: 0 14px 32px rgba(0,120,118,.22);
+  --card-lift: -4px;
+  --card-border-rest: 1px solid rgba(0,0,0,.06);
+  --card-border-hover: rgba(0,120,118,.30);
+}
+
+/* Rest state — make all cards equal */
+#portfolio .portfolio-item,
+#Certificates .portfolio-item,
+.tl2__card{
+  border: var(--card-border-rest) !important;
+  box-shadow: var(--card-shadow-rest) !important;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease;
+}
+
+/* Hover state — same lift & shadow everywhere */
+@media (hover:hover) and (pointer:fine){
+  #portfolio .portfolio-item:hover,
+  #Certificates .portfolio-item:hover,
+  .tl2__card:hover{
+    transform: translateY(var(--card-lift)) !important;
+    box-shadow: var(--card-shadow-hover) !important;
+    border-color: var(--card-border-hover) !important;
+  }
+}
+
+/* Soften Projects (it was stronger) */
+#portfolio .portfolio-item:hover{
+  /* remove the heavier custom shadow */
+  box-shadow: var(--card-shadow-hover) !important;
+}
+
+/* Soften Certificates icon glow to match Projects */
+#Certificates .portfolio-item i{
+  box-shadow: none;                 /* kill inner glow */
+  transition: transform .2s ease, background .2s ease, color .2s ease;
+}
+#Certificates .portfolio-item:hover{
+  background: #fff !important;      /* keep bg consistent with Projects */
+}
+#Certificates .portfolio-item:hover i{
+  background: rgba(0,120,118,.08);
+  color: #007876;
+  transform: translateY(-1px);
+  box-shadow: none;
+}
+
+/* Optional: align timeline hover with the same feel (already covered above) */
+
+/* buttons — override */
+.btn,.btn-primary,.btn-success{border-radius:9999px;padding:.625rem 1.625rem;font-weight:700}
+.btn-primary,.btn-success{background:#007876!important;border-color:#007876!important;color:#fff!important;box-shadow:0 8px 24px rgba(0,120,118,.18);transition:background .2s ease,transform .2s ease,box-shadow .2s ease}
+.btn-primary:hover,.btn-success:hover{background:#009c90!important;transform:translateY(-2px);box-shadow:0 12px 36px rgba(0,120,118,.24)}
+.btn-primary:focus,.btn-success:focus{box-shadow:0 0 0 .25rem rgba(0,156,144,.25),0 8px 24px rgba(0,120,118,.18)!important;outline:0}
+.btn-primary:disabled,.btn-success:disabled{background:#6bbdb8!important;border-color:#6bbdb8!important;color:#fff!important}
+a.btn{text-decoration:none}
