@@ -2877,14 +2877,14 @@ fieldset:disabled .btn {
 }
 
 .btn-primary {
-  color: #000;
-  background-color: #5cb25d;
+  color: #ffffff;
+  background-color: #007873;
   border-color: #000000;
 }
 
 .btn-primary:hover {
   color: #000;
-  background-color: #0f9015;
+  background-color: #006b68;
   border-color: #000000;
 }
 

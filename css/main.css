@@ -53,7 +53,7 @@ html {
 .nav-link:hover,
 .nav-link:focus,
 .active .nav-link {
-  color: rgba(61, 173, 86, 0.75) !important;
+  color: #007672 !important;
 }
 
 /* Hero (intro) section */
@@ -149,7 +149,7 @@ img.avatar {
   left: 0;
   width: 100%;
   padding: 12px;
-  background: rgba(120, 182, 133, 0.75);
+  background: #5fbbb6;
   transition: transform 0.35s;
   transform: translate3d(0, 100%, 0);
 }
@@ -245,7 +245,7 @@ footer a:not(.nav-link) {
   position: absolute;
   bottom: -25px;
   right: -30px;
-  background-image: url("../images/marker_green.svg");
+  background-image: url("../images/illustrations/marker_teal.svg");
   background-repeat: no-repeat;
 }
 
@@ -410,3 +410,123 @@ footer a:not(.nav-link) {
 @media (prefers-reduced-motion:reduce){
   .tl2__body{ transition:none; }
 }
+
+/* === tl2: no global offset; proper left/right branches with equal gap === */
+
+/* one knob for the distance from the spine to the card edge */
+:root{
+  --tl2-gap-fixed: 28px; /* tweak 24–32px to taste */
+}
+
+/* keep the spine centered (stable) */
+.tl2__spine{
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* DESKTOP/TABLET: alternate correctly */
+@media (min-width: 641px){
+  /* remove any previous offset on the whole group */
+  .tl2{ transform: none !important; }
+
+  /* RIGHT items: half card width (edge to spine) + fixed gap */
+  .tl2--right .tl2__card{
+    transform: translateX(calc(50% + var(--tl2-gap-fixed))) !important;
+  }
+
+  /* LEFT items: half card width in the other direction + fixed gap */
+  .tl2--left .tl2__card{
+    transform: translateX(calc(-50% - var(--tl2-gap-fixed))) !important;
+  }
+}
+
+/* MOBILE: single column unchanged */
+@media (max-width: 640px){
+  .tl2--right .tl2__card,
+  .tl2--left  .tl2__card{
+    transform: none !important;
+    width: 100%;
+  }
+  .tl2__spine{ left:.5rem; transform:none; }
+  .tl2__item::before{ left:.5rem; transform:translate(-50%,-50%); }
+}
+
+
+/* === Projects: card layout like screenshot === */
+#portfolio .grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+  align-items: stretch;
+}
+#portfolio .grid-item{
+  width: auto;               /* kill old masonry widths */
+  padding: 0;
+  float: none;
+}
+#portfolio .grid a{
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Card */
+#portfolio .portfolio-item{
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 28px 20px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+#portfolio .portfolio-item:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,.14);
+}
+
+/* Icon */
+#portfolio .portfolio-item i{
+  font-size: 48px;           /* consistent size */
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+/* Text */
+#portfolio .portfolio-item figcaption{
+  position: static;          /* no overlay */
+  transform: none;
+  background: transparent;
+  padding: 0;
+  width: 100%;
+}
+#portfolio .portfolio-item h4{
+  margin: 6px 0 6px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #111;
+}
+#portfolio .portfolio-item p{
+  margin: 0 0 6px;
+  font-size: .95rem;
+  color: #5a6b6f;
+  display: -webkit-box;      /* clamp to ~2 lines */
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 2.6em;         /* keeps rows even */
+}
+#portfolio .portfolio-item div{
+  font-weight: 700;
+  color: #7a8a8e;            /* “GitHub.com / medium.com” line */
+}
+
+/* Remove old hover caption behavior */
+.portfolio-item:hover figcaption{ transform:none; }
