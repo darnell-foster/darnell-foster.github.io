@@ -533,11 +533,11 @@ footer a:not(.nav-link) {
 
 
 
-/* === Certificates: distinct visual style === */
+/* === Certificates: glass / award style === */
 #Certificates .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 24px;
+  gap: 26px;
   align-items: stretch;
 }
 
@@ -549,12 +549,14 @@ footer a:not(.nav-link) {
 
 #Certificates .portfolio-item {
   position: relative;
-  background: linear-gradient(180deg, #ffffff 0%, #f8fbfb 100%);
-  border: 2px solid rgba(0, 120, 118, 0.15);
   border-radius: 18px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(0, 120, 118, 0.25);
+  box-shadow: 0 4px 22px rgba(0, 0, 0, 0.06);
+  padding: 36px 24px 28px;
   text-align: center;
-  padding: 30px 20px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
   transition: all 0.25s ease;
   height: 100%;
   display: flex;
@@ -563,42 +565,45 @@ footer a:not(.nav-link) {
   align-items: center;
 }
 
-/* Circular icon badge */
+/* Floating glowing icon */
 #Certificates .portfolio-item i {
-  font-size: 42px;
+  font-size: 44px;
   color: #007876;
-  background: rgba(0, 120, 118, 0.08);
+  background: linear-gradient(145deg, rgba(0,120,118,0.08), rgba(0,120,118,0.02));
   padding: 20px;
   border-radius: 50%;
-  margin-bottom: 16px;
-  box-shadow: inset 0 0 0 2px rgba(0, 120, 118, 0.15);
+  box-shadow: 0 2px 6px rgba(0,120,118,0.2);
+  margin-bottom: 14px;
   transition: all 0.3s ease;
 }
 
-/* Text styling */
+/* Title and description */
 #Certificates .portfolio-item h4 {
   font-size: 1rem;
   font-weight: 700;
-  color: #0f4b4a;
+  color: #0d3f3e;
   margin: 8px 0 6px;
-  line-height: 1.3;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 #Certificates .portfolio-item div {
-  color: #555;
-  font-weight: 600;
   font-size: 0.9rem;
+  color: #4a5e5d;
+  font-weight: 600;
 }
 
-/* Hover effect */
+/* Hover motion */
 #Certificates .portfolio-item:hover {
-  transform: translateY(-4px);
-  border-color: rgba(0, 120, 118, 0.35);
-  box-shadow: 0 10px 36px rgba(0, 120, 118, 0.18);
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.75);
+  border-color: rgba(0, 120, 118, 0.4);
+  box-shadow: 0 8px 30px rgba(0, 120, 118, 0.25);
 }
 
 #Certificates .portfolio-item:hover i {
-  background: #007876;
   color: #fff;
-  box-shadow: 0 0 10px rgba(0, 120, 118, 0.4);
+  background: #007876;
+  box-shadow: 0 0 12px rgba(0, 120, 118, 0.6);
+  transform: scale(1.1);
 }
