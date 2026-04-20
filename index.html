@@ -18,7 +18,7 @@
     <link href="./css/bootstrap.min.css?ver=1.2.0" rel="stylesheet">
     
     <link href="./css/aos.css?ver=1.2.0" rel="stylesheet">
-    <link href="./css/main.css?ver=1.2.0" rel="stylesheet">
+    <link href="./css/main.css?ver=1.3.0" rel="stylesheet">
     <noscript>
       <style type="text/css">
         [data-aos] {
@@ -55,29 +55,51 @@
     <div class="page-content">
       <div id="content">
 <header>
-  <div class="cover bg-light">
+  <div class="cover">
     <div class="container px-3">
-      <div class="row">
-        <div class="col-lg-6 p-2">
-          <img class="img-fluid" src="images/illustrations/avatar_2.png" alt="hello"/>
+      <div class="row align-items-center py-5">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <p class="text-uppercase mb-1" style="letter-spacing:.12em;font-size:.8rem;color:#5a8a88;font-weight:700">Hello, I’m</p>
+          <h1 class="intro-title mb-2" data-aos="fade-right" data-aos-delay="50">Darnell Foster</h1>
+          <p class="hero-subtitle mt-1 mb-3" data-aos="fade-up" data-aos-delay="100">CS Graduate &middot; Cybersecurity Specialist</p>
+          <div class="social-nav" data-aos="fade-up" data-aos-delay="150">
+            <nav role="navigation" aria-label="Social links">
+              <ul class="nav justify-content-left">
+                <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/in/darnell-foster-495574234/" title="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i><span class="menu-title sr-only">LinkedIn</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="https://github.com/Darnell-Foster" title="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i><span class="menu-title sr-only">GitHub</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="https://medium.com/@darnellfoster12" title="Medium" target="_blank" rel="noopener"><i class="fab fa-medium"></i><span class="menu-title sr-only">Medium</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="https://dfost.itch.io/" title="Itch.io" target="_blank" rel="noopener"><i class="fab fa-itch-io"></i><span class="menu-title sr-only">Itch.io</span></a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="mt-4 d-flex gap-2 flex-wrap" data-aos="fade-up" data-aos-delay="200">
+            <a class="btn btn-primary" href="#contact">Get In Touch</a>
+            <a class="btn btn-outline-secondary" href="#portfolio">View Work</a>
+          </div>
         </div>
-        <div class="col-lg-6">
-          <div class="mt-5">
-            <p class="lead text-uppercase mb-1">Hi!</p>
-            <h1 class="intro-title marker" data-aos="fade-left" data-aos-delay="50">I’m Darnell Foster</h1>
-            <p class="lead fw-normal mt-3" data-aos="fade-up" data-aos-delay="100">Computer Science Student Streaming in Cyber Security</p>
-            <div class="social-nav" data-aos="fade-up" data-aos-delay="200">
-              <nav role="navigation">
-                <ul class="nav justify-content-left">
-                  <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/in/darnell-foster-495574234/" title="LinkedIn"><i class="fab fa-linkedin"></i><span class="menu-title sr-only">LinkedIn</span></a></li>
-                  <li class="nav-item"><a class="nav-link" href="https://github.com/Darnell-Foster" title="github"><i class="fab fa-github"></i><span class="menu-title sr-only">github</span></a></li>
-                  <li class="nav-item"><a class="nav-link" href="https://medium.com/@darnellfoster12" title="medium"><i class="fab fa-medium"></i><span class="menu-title sr-only">medium</span></a></li>
-                  <li class="nav-item"><a class="nav-link" href="https://dfost.itch.io/" title="itch"><i class="fab fa-itch-io"></i><span class="menu-title sr-only">itch</span></a></li>
-                </ul>
-              </nav>
+        <div class="col-lg-6 d-flex justify-content-center justify-content-lg-end" data-aos="fade-left" data-aos-delay="100">
+          <div class="hero-terminal" aria-hidden="true">
+            <div class="terminal-bar">
+              <span class="t-dot t-dot--red"></span>
+              <span class="t-dot t-dot--yellow"></span>
+              <span class="t-dot t-dot--green"></span>
+              <span class="t-title">darnell@portfolio:~</span>
             </div>
-            <!-- <div class="mt-3" data-aos="fade-up" data-aos-delay="200"><a class="btn btn-primary shadow-sm mt-1 hover-effect" href="#contact">Get In Touch <i class="fas fa-arrow-right"></i></a></div> -->
-            <div class="mt-3" data-aos="fade-up" data-aos-delay="200"><a class="btn btn-primary shadow-sm mt-1 hover-effect" href="#contact"><b>Get In Touch</b></a></div>
+            <div class="terminal-body">
+              <div class="t-line"><span class="t-prompt">$</span><span class="t-cmd">whoami</span></div>
+              <div class="t-line t-out">Darnell Foster</div>
+              <div class="t-gap"></div>
+              <div class="t-line"><span class="t-prompt">$</span><span class="t-cmd">echo $ROLE</span></div>
+              <div class="t-line t-out">CS Graduate &middot; Cybersecurity</div>
+              <div class="t-gap"></div>
+              <div class="t-line"><span class="t-prompt">$</span><span class="t-cmd">cat interests.txt</span></div>
+              <div class="t-line t-out"><span class="t-arr">&rarr;</span>Security &amp; Systems</div>
+              <div class="t-line t-out"><span class="t-arr">&rarr;</span>Full Stack Development</div>
+              <div class="t-line t-out"><span class="t-arr">&rarr;</span>DevOps &amp; Infrastructure</div>
+              <div class="t-line t-out"><span class="t-arr">&rarr;</span>Always Learning</div>
+              <div class="t-gap"></div>
+              <div class="t-line"><span class="t-prompt">$</span><span class="t-cursor">&#9612;</span></div>
+            </div>
           </div>
         </div>
       </div>
@@ -97,8 +119,7 @@
     <div class="row">
       <div class="col-md-6">
         <h2 class="h4 my-2">Hello! I’m Darnell Foster.</h2>
-        <!-- <p>I am currently pursuing a degree in Computer Science at Carleton University. Ever since I can remember, my interest with computers has been a constant in my life. Whether it was modding my favorite games during my childhood or delving into computer programming, the tech realm has always captivated me, and my interest has only grown. Recognizing my passion for computer science, it felt natural for me to pursue it as a career. I have a strong desire to further develop and learn new skills as I encounter opportunities and the challenges that come with them.</p> -->
-        <p>I’m a Computer Science student at Carleton University with a deep-rooted passion for technology. From modding my favorite games as a kid to exploring programming, networking, and cybersecurity, every aspect of computers has always captured my interest. As I continue my studies, I’m focused on expanding my skills, tackling new challenges, and finding opportunities to apply what I’ve learned in meaningful, innovative ways.</p>
+        <p>I’m a recent Computer Science graduate from Carleton University, where I specialized in the Cybersecurity stream. Technology has always been more than just a career path for me — from reverse-engineering games as a kid to diving into security research, systems programming, and full-stack development. I thrive on the constant learning that the tech world demands, whether that means picking up a new framework, digging into a CVE, or tinkering with home infrastructure. I’m always looking for opportunities to build, grow, and make an impact.</p>
         <div class="row mt-3">
           <div class="col-sm-2">
             <div class="pb-1">Email:</div>
@@ -139,36 +160,50 @@
       <p class="mx-auto mb-3" style="max-width:600px">I am a quick learner and specialize in multitude of skills required for Web Application Development and Product Design</p>
     </div> -->
     
-    <div class="row py-3 justify-content-center">
+    <div class="row py-3 justify-content-center g-4">
 
       <div class="col-md-3 text-center" data-aos="fade-up" data-aos-delay="100">
-        <div class="h5">Languages</div>
-        <img class="mb-2" src="images/projects/Java-logo.svg" width="96" height="96" alt="web design"/>
-        <p style="max-width:600px"> Java</p>
-        <p style="max-width:600px"> Python</p>
-        <p style="max-width:600px"> C/C++</p>
-        <p style="max-width:600px"> JavaScript</p>
-        <p style="max-width:600px"> SQL/MongoDB</p>
-        <p style="max-width:600px"> HTML/CSS</p>
+        <div class="skill-category-icon mb-3">
+          <img src="images/projects/Java-logo.svg" width="64" height="64" alt="Languages"/>
+        </div>
+        <div class="h5 mb-3">Languages</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">C / C++</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">SQL / MongoDB</span>
+          <span class="skill-tag">HTML / CSS</span>
+        </div>
+      </div>
+
+      <div class="col-md-3 text-center" data-aos="fade-up" data-aos-delay="200">
+        <div class="skill-category-icon mb-3">
+          <img src="images/projects/app-development.svg" width="64" height="64" alt="Tools"/>
+        </div>
+        <div class="h5 mb-3">Tools &amp; Platforms</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Git / GitHub</span>
+          <span class="skill-tag">Node.js / npm</span>
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">Linux</span>
+          <span class="skill-tag">OpenShift</span>
+          <span class="skill-tag">Unity / Godot</span>
+        </div>
       </div>
 
       <div class="col-md-3 text-center" data-aos="fade-up" data-aos-delay="300">
-        <div class="h5">Tools</div>
-        <img class="mb-2" src="images/projects/app-development.svg" width="96" height="96" alt="app development"/>
-        <p style="max-width:600px"> Github</p>
-        <p style="max-width:600px"> NodeJS/npm</p>
-        <p style="max-width:600px"> VM & Docker</p>
-        <p style="max-width:600px"> Unity/Godot</p>
-        <p style="max-width:600px"> Linux</p>
-      </div>
-
-      <div class="col-md-3 text-center" data-aos="fade-up" data-aos-delay="100">
-        <div class="h5">Soft Skills</div>
-        <img class="mb-2" src="images/projects/CheckList.svg" width="96" height="96" alt="graphic design"/>
-        <p style="max-width:600px"> Self-management & Collaborative</p>
-        <p style="max-width:600px"> Adaptable</p>
-        <p style="max-width:600px"> Problem Solving</p>
-        <p style="max-width:600px"> Time management</p>
+        <div class="skill-category-icon mb-3">
+          <img src="images/projects/CheckList.svg" width="64" height="64" alt="Soft Skills"/>
+        </div>
+        <div class="h5 mb-3">Soft Skills</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Collaborative</span>
+          <span class="skill-tag">Adaptable</span>
+          <span class="skill-tag">Problem Solving</span>
+          <span class="skill-tag">Time Management</span>
+          <span class="skill-tag">Self-Driven</span>
+        </div>
       </div>
 
     </div>
@@ -189,7 +224,7 @@
       <div class="grid-item">
         <a href="https://github.com/darnell-foster/COMP1501-FinalProject">
           <figure class="portfolio-item">
-            <i class="bi bi-controller" style="font-size:80px;"></i>
+            <i class="bi bi-controller"></i>
             <!-- <img src="images/portfolio/1-small.png"> -->
             <figcaption>
               <h4 class="h5 mb-0">The Bizzare Adventure</h4>
@@ -203,7 +238,7 @@
         <a href="https://github.com/Darnell-Foster/Python_Calculator">
           <figure class="portfolio-item">
             <!-- <img src="images/portfolio/2-small.png" > -->
-            <i class="bi bi-calculator" style="font-size:80px;"></i>
+            <i class="bi bi-calculator"></i>
             <figcaption> 
               <h4 class="h5 mb-0">Simple Calculator</h4> 
               <div>GitHub.com</div>
@@ -215,7 +250,7 @@
       <div class="grid-item">
         <a href="https://medium.com/@darnellfoster12/creating-a-truenas-fileserver-e000446eea91">
           <figure class="portfolio-item">
-            <i class="bi bi-hdd" style="font-size:80px;"></i>
+            <i class="bi bi-hdd"></i>
             <figcaption> 
               <h4 class="h5 mb-0">TrueNas File Server</h4>
               <div>medium.com</div>
@@ -227,7 +262,7 @@
       <div class="grid-item">
         <a href="https://github.com/Darnell-Foster/Linkedin-JobSearch-WebScrapper">
           <figure class="portfolio-item">
-            <i class="bi bi-text-left" style="font-size:80px;"></i>
+            <i class="bi bi-text-left"></i>
             <!-- <img src="images/portfolio/pngkey.com-internet-icon-png-4500237.png"> -->
             <figcaption>
               <h4 class="h5 mb-0">Linkedin WebScrapper</h4>
@@ -241,7 +276,7 @@
       <div class="grid-item">
         <a href="https://github.com/darnell-foster/Cook-Book">
           <figure class="portfolio-item">
-            <i class="bi bi-book" style="font-size:80px;"></i>
+            <i class="bi bi-book"></i>
             <!-- <img src="images/portfolio/pngkey.com-internet-icon-png-4500237.png"> -->
             <figcaption>
               <h4 class="h5 mb-0">Cook-Book</h4>
@@ -255,7 +290,7 @@
       <div class="grid-item">
         <a href="https://github.com/vidun-jay/3005-group-project">
           <figure class="portfolio-item">
-            <i class="bi bi-window" style="font-size:80px;"></i>
+            <i class="bi bi-window"></i>
             <!-- <img src="images/portfolio/pngkey.com-internet-icon-png-4500237.png"> -->
             <figcaption>
               <h4 class="h5 mb-0">Fitness App</h4>
@@ -269,7 +304,7 @@
       <div class="grid-item">
         <a href="https://github.com/darnell-foster/Elevator-System-Simulator">
           <figure class="portfolio-item">
-            <i class="bi bi-arrow-down-up" style="font-size:80px;"></i>
+            <i class="bi bi-arrow-down-up"></i>
             <!-- <img src="images/portfolio/pngkey.com-internet-icon-png-4500237.png"> -->
             <figcaption>
               <h4 class="h5 mb-0">Elevator-System-Simulator</h4>
@@ -291,52 +326,52 @@
   <div class="container-narrow">
     <div class="text-center mb-5"><h2 class="marker marker-center">Experience</h2></div>
 
-    <div class="tl2">
-      <div class="tl2__spine" aria-hidden="true"></div>
-      <ol class="tl2__list" aria-label="Career timeline, newest at top">
-        <!-- NEWEST FIRST -->
+    <div class="timeline" aria-label="Career timeline">
+      <div class="timeline-spine" aria-hidden="true"></div>
 
+      <!-- Junior Developer -->
+      <div class="timeline-entry" data-aos="fade-right" data-aos-delay="100">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-card">
+          <span class="timeline-date-badge">Dec 2024 &ndash; Dec 2025</span>
+          <div class="tc-header">
+            <div class="tc-logo">
+              <img src="images/experience/government_of_canada_logo.jpg" alt="Government of Canada">
+            </div>
+            <div class="tc-title">
+              <h3>Junior Developer</h3>
+              <span class="tc-company">Government of Canada &middot; ISED</span>
+            </div>
+          </div>
+          <p class="tc-body">Contributed to a mapping tool built in Drupal with PHP, SQL, and JavaScript, automating large-scale data migrations with YAML and API integration. Managed containerized environments using Docker, WSL, and OpenShift, and supported CI/CD workflows with Bash and Bitbucket.</p>
+          <div class="tc-tags">
+            <span>Drupal</span><span>PHP</span><span>SQL</span><span>JavaScript</span>
+            <span>Docker</span><span>OpenShift</span><span>Bash</span><span>YAML</span>
+          </div>
+        </div>
+      </div>
 
-        <li class="tl2__item tl2--right">
-          <details class="tl2__card">
-            <summary>
-              <div class="tl2__title">
-                <h3 class="h5 mb-1">Junior Developer</h3>
-                <div class="tl2__meta">
-                  <span class="tl2__company">Government of Canada ISED</span>
-                  <span class="tl2__date">Dec 2024 – Dec 2025</span>
-                </div>
-              </div>
-              <div class="tl2__logo">
-                <img src="images/experience/government_of_canada_logo.jpg" alt="Gov of Canada" width="24" height="24">
-              </div>
-            </summary>
-            <div class="tl2__body"><div>
-              Contributed to a mapping tool built in Drupal with PHP, SQL, and Javascript automating large-scale data migrations with YAML and API integration. Managed containerized environments using Docker, WSL, and OpenShift, and supported CI/CD workflows with Bash and Bitbucket.
-            </div></div>
-          </details>
-        </li>
+      <!-- Student Project Assistant -->
+      <div class="timeline-entry timeline-entry--right" data-aos="fade-left" data-aos-delay="150">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-card">
+          <span class="timeline-date-badge">May &ndash; Dec 2024</span>
+          <div class="tc-header">
+            <div class="tc-logo">
+              <img src="images/experience/government_of_canada_logo.jpg" alt="Government of Canada">
+            </div>
+            <div class="tc-title">
+              <h3>Student Project Assistant</h3>
+              <span class="tc-company">Government of Canada &middot; PSPC</span>
+            </div>
+          </div>
+          <p class="tc-body">Supported cybersecurity training initiatives by developing learning tools in Microsoft Power Apps and leveraging AI automation to enhance engagement. Researched and documented best practices for patch management and infrastructure security.</p>
+          <div class="tc-tags">
+            <span>Power Apps</span><span>Cybersecurity</span><span>AI Automation</span><span>Patch Management</span>
+          </div>
+        </div>
+      </div>
 
-        <li class="tl2__item tl2--left">
-          <details class="tl2__card">
-            <summary>
-              <div class="tl2__title">
-                <h3 class="h5 mb-1">Student Project Assistant</h3>
-                <div class="tl2__meta">
-                  <span class="tl2__company">Government of Canada PSPC</span>
-                  <span class="tl2__date">May – Dec 2024</span>
-                </div>
-              </div>
-              <div class="tl2__logo">
-                <img src="images/experience/government_of_canada_logo.jpg" alt="Gov of Canada" width="24" height="24">
-              </div>
-            </summary>
-            <div class="tl2__body"><div>
-              Supported cybersecurity training initiatives by developing learning tools in Microsoft Power Apps and leveraging AI automation to enhance engagement. Researched and documented best practices for patch management and infrastructure security.          </details>
-        </li>
-
-        <!-- Add more items below (alternate tl2--right / tl2--left) -->
-      </ol>
     </div>
   </div>
 </div>
@@ -356,7 +391,7 @@
       <div class="grid-item">
         <a href="https://coursera.org/share/8ea7a408f93e36398ae4ea6e24f52d96">
           <figure class="portfolio-item">
-            <i class="bi bi-github" style="font-size:80px;"></i>
+            <i class="bi bi-github"></i>
             <figcaption>
               <h4 class="h5 mb-0">Introduction to Git and GitHub</h4>
               <div>https://www.coursera.org/</div>
@@ -368,7 +403,7 @@
       <div class="grid-item">
         <a href="https://coursera.org/share/7fc28864ed2b13bde3cb6d46730dbb30">
           <figure class="portfolio-item">
-            <i class="bi bi-bug" style="font-size:80px;"></i>
+            <i class="bi bi-bug"></i>
             <figcaption>
               <h4 class="h5 mb-0">Troubleshooting and Debugging Techniques
               </h4>
@@ -381,7 +416,7 @@
       <div class="grid-item">
         <a href="https://coursera.org/share/26c7f89a4e93b8d066d2bc3c503929fc">
           <figure class="portfolio-item">
-            <i class="bi bi-google" style="font-size:80px;"></i>
+            <i class="bi bi-google"></i>
             <figcaption>
               <h4 class="h5 mb-0">Google IT Automation with Python
               </h4>
@@ -394,7 +429,7 @@
       <div class="grid-item">
         <a href="https://coursera.org/share/39cf15c7f79c249a37d3276aafde80c2">
           <figure class="portfolio-item">
-            <i class="bi bi-cloud" style="font-size:80px;"></i>
+            <i class="bi bi-cloud"></i>
             <figcaption>
               <h4 class="h5 mb-0">Configuration Management and the Cloud
               </h4>
@@ -484,7 +519,7 @@
   <div class="container">
     <div class="my-3">
       <div class="h4">Darnell Foster</div>
-      <p> Computer Science Student Streaming in Cyber Security</p>
+      <p>CS Graduate &middot; Cybersecurity Specialist</p>
       <div class="social-nav">
         <nav role="navigation">
           <ul class="nav justify-content-center">
@@ -499,13 +534,8 @@
 </footer></div>
     </div>
     <div id="scrolltop"><a class="btn btn-secondary" href="#top"><span class="icon"><i class="fas fa-angle-up fa-x"></i></span></a></div>
-    <!-- <script src="./scripts/imagesloaded.pkgd.min.js?ver=1.2.0"></script> -->
-    <!-- <script src="./scripts/masonry.pkgd.min.js?ver=1.2.0"></script> -->
-    <script src="./scripts/BigPicture.min.js?ver=1.2.0"></script>
-    <script src="./scripts/purecounter.min.js?ver=1.2.0"></script>
-    <script src="./scripts/bootstrap.bundle.min.js?ver=1.2.0"></script>
-    <script src="./scripts/aos.min.js?ver=1.2.0"></script>
-    <script src="./scripts/main.js?ver=1.2.0"></script>
-    <script src="./scripts/experienceTimeLine.js"></script>
+    <script src="./scripts/bootstrap.bundle.min.js?ver=1.3.0"></script>
+    <script src="./scripts/aos.min.js?ver=1.3.0"></script>
+    <script src="./scripts/main.js?ver=1.3.0"></script>
   </body>
 </html>
