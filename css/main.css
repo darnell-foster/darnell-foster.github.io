@@ -45,7 +45,7 @@ html { scroll-behavior: smooth; }
    HERO SECTION
    ===================================================================== */
 .cover {
-  background: linear-gradient(135deg, #f8fffe 0%, #edf7f6 55%, #e2f3f2 100%);
+  background: #f8f9fa;
   padding-bottom: 0;
 }
 
@@ -65,9 +65,9 @@ html { scroll-behavior: smooth; }
   box-shadow: 0 24px 64px rgba(0,0,0,0.22), 0 0 0 1px rgba(255,255,255,0.05);
   overflow: hidden;
   font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
-  font-size: 0.875rem;
+  font-size: 1.05rem;
   width: 100%;
-  max-width: 440px;
+  max-width: 560px;
 }
 
 .terminal-bar {
@@ -98,8 +98,9 @@ html { scroll-behavior: smooth; }
 }
 
 .terminal-body {
-  padding: 1.25rem 1.5rem 1.6rem;
-  line-height: 1.7;
+  padding: 1.4rem 1.75rem 1.75rem;
+  line-height: 1.75;
+  min-height: 260px;
 }
 
 .t-line {
@@ -153,6 +154,7 @@ html { scroll-behavior: smooth; }
   width: 100%;
   transform-origin: top;
   animation: animateWave 2000ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  background-color: #fff;
   background-image: url("../images/wave-bg.svg");
   background-position: center;
   background-repeat: no-repeat;
@@ -167,7 +169,7 @@ img.avatar { border-radius: 40px; }
 /* =====================================================================
    SKILLS SECTION
    ===================================================================== */
-#skills { background: #f4fbfa; }
+#skills { background: #fff; }
 
 .skill-category-icon {
   display: flex;
@@ -291,7 +293,7 @@ img.avatar { border-radius: 40px; }
 /* =====================================================================
    EXPERIENCE TIMELINE
    ===================================================================== */
-#experience { background: #f4fbfa; }
+#experience { background: #fff; }
 
 .timeline {
   position: relative;
@@ -321,7 +323,7 @@ img.avatar { border-radius: 40px; }
   font-weight: 700;
   font-size: 0.75rem;
   color: #007876;
-  background: #f4fbfa;
+  background: #fff;
   padding: 0.15rem 0.65rem;
   border-radius: 999px;
   border: 1.5px solid rgba(0,120,118,0.3);
@@ -349,7 +351,7 @@ img.avatar { border-radius: 40px; }
   height: 16px;
   border-radius: 50%;
   background: #007876;
-  border: 3px solid #f4fbfa;
+  border: 3px solid #fff;
   box-shadow: 0 0 0 4px rgba(0,120,118,0.22);
   z-index: 2;
 }
@@ -456,7 +458,7 @@ img.avatar { border-radius: 40px; }
   }
   .timeline-spine::before {
     left: 1.25rem;
-    background: #f4fbfa;
+    background: #fff;
   }
   .timeline-entry,
   .timeline-entry--right {
@@ -469,7 +471,7 @@ img.avatar { border-radius: 40px; }
   .timeline-dot {
     left: 1.25rem;
     transform: translateX(-50%);
-    border-color: #f4fbfa;
+    border-color: #fff;
   }
 }
 
@@ -548,6 +550,71 @@ img.avatar { border-radius: 40px; }
   font-size: 0.82rem;
   color: #7a8a8e;
   font-weight: 600;
+}
+
+/* =====================================================================
+   RESUME SECTION
+   ===================================================================== */
+.resume-card {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  background: #fff;
+  border: 1px solid rgba(0,120,118,0.18);
+  border-radius: 18px;
+  padding: 2rem 2.25rem;
+  box-shadow: 0 6px 28px rgba(0,0,0,0.07);
+  flex-wrap: wrap;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.resume-card__icon {
+  flex-shrink: 0;
+  font-size: 2.75rem;
+  color: #007876;
+  background: rgba(0,120,118,0.08);
+  width: 72px;
+  height: 72px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  border: 1.5px solid rgba(0,120,118,0.2);
+}
+
+.resume-card__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.resume-card__body h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0d3f3e;
+  margin: 0 0 0.25rem;
+}
+
+.resume-card__body .resume-role {
+  color: #007876;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin: 0 0 0.4rem;
+}
+
+.resume-card__body p {
+  font-size: 0.9rem;
+  color: #5a6b6f;
+  margin: 0;
+}
+
+.resume-card__action {
+  flex-shrink: 0;
+}
+
+@media (max-width: 576px) {
+  .resume-card { padding: 1.5rem; gap: 1.25rem; }
+  .resume-card__action { width: 100%; }
+  .resume-card__action .btn { width: 100%; text-align: center; }
 }
 
 /* =====================================================================
