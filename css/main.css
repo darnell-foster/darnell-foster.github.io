@@ -125,6 +125,8 @@ html { scroll-behavior: smooth; }
 .t-out   {
   color: #8b949e;
   padding-left: 1.2rem;
+  white-space: normal;
+  overflow-wrap: break-word;
 }
 
 .t-arr   { color: #56d364; margin-right: 0.35rem; }
