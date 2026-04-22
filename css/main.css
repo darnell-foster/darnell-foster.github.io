@@ -4,6 +4,13 @@
 html, body { overflow-x: hidden; }
 html { scroll-behavior: smooth; }
 
+/* White base so all sections default to white */
+body { background-color: #fff; }
+.page-content, #content { background: transparent; }
+
+/* Inner hero+wave wrapper stays grey to match the navbar above it */
+#content > header { background: #f8f9fa; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
@@ -18,6 +25,11 @@ html { scroll-behavior: smooth; }
   font-weight: 700;
   line-height: 3rem;
   text-decoration: none;
+}
+
+.navbar-brand img {
+  transform: scale(1.1);
+  transform-origin: left center;
 }
 
 @media (min-width: 48em) {
@@ -755,3 +767,311 @@ footer a:not(.nav-link) {
 }
 
 a.btn { text-decoration: none; }
+
+/* =====================================================================
+   THEME TOGGLE BUTTON
+   ===================================================================== */
+.theme-toggle {
+  background: transparent;
+  border: 1.5px solid rgba(0,120,118,0.4);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #007876;
+  font-size: 0.9rem;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  background: rgba(0,120,118,0.1);
+  border-color: #007876;
+}
+
+/* =====================================================================
+   DARK MODE
+   ===================================================================== */
+:root {
+  --transition-theme: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+[data-theme="dark"] {
+  --dm-bg:       #0d1117;
+  --dm-surface:  #161b22;
+  --dm-surface2: #1c2129;
+  --dm-border:   #30363d;
+  --dm-text:     #e6edf3;
+  --dm-muted:    #8b949e;
+  --dm-accent:   #39d0c8;
+  --dm-accent2:  #009c90;
+}
+
+[data-theme="dark"] body {
+  background-color: var(--dm-bg);
+  color: var(--dm-text);
+  transition: var(--transition-theme);
+}
+
+/* Navbar — cover all states including fixed-top (added by JS on scroll) */
+[data-theme="dark"] .navbar,
+[data-theme="dark"] header.bg-light,
+[data-theme="dark"] .navbar.bg-light,
+[data-theme="dark"] #header-nav,
+[data-theme="dark"] #header-nav.fixed-top {
+  background-color: var(--dm-surface) !important;
+}
+
+/* Strip borders and shadows from all header/section edges — both modes */
+header,
+header.bg-light,
+#header-nav,
+.page-content header,
+.section {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Logo — brighter in dark mode to pop against dark navbar */
+[data-theme="dark"] .navbar-brand img {
+  filter: brightness(1.5) drop-shadow(0 2px 10px rgba(57,208,200,0.22));
+  transition: filter 0.25s ease;
+}
+
+[data-theme="dark"] .nav-link {
+  color: var(--dm-muted) !important;
+}
+
+[data-theme="dark"] .nav-link:hover {
+  color: var(--dm-accent) !important;
+}
+
+[data-theme="dark"] .theme-toggle {
+  color: var(--dm-accent);
+  border-color: rgba(57,208,200,0.4);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+  background: rgba(57,208,200,0.1);
+  border-color: var(--dm-accent);
+}
+
+/* Hero / cover — matches navbar (#161b22) above and wave fill (#161b22) below */
+[data-theme="dark"] .cover {
+  background: var(--dm-surface) !important;
+}
+
+[data-theme="dark"] .cover h1,
+[data-theme="dark"] .cover .lead,
+[data-theme="dark"] .cover p {
+  color: var(--dm-text) !important;
+}
+
+/* Terminal */
+[data-theme="dark"] .hero-terminal {
+  background: #0a0e14;
+  border-color: var(--dm-border);
+}
+
+[data-theme="dark"] .terminal-header {
+  background: #161b22;
+  border-bottom-color: var(--dm-border);
+}
+
+/* Wave — hide in dark mode, not needed */
+[data-theme="dark"] .wave-bg {
+  background-color: var(--dm-bg) !important;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'><path fill='%23161b22' fill-opacity='1' d='M0,256L21.8,250.7C43.6,245,87,235,131,192C174.5,149,218,75,262,80C305.5,85,349,171,393,186.7C436.4,203,480,149,524,149.3C567.3,149,611,203,655,197.3C698.2,192,742,128,785,90.7C829.1,53,873,43,916,69.3C960,96,1004,160,1047,176C1090.9,192,1135,160,1178,138.7C1221.8,117,1265,107,1309,112C1352.7,117,1396,139,1418,149.3L1440,160L1440,0L1418.2,0C1396.4,0,1353,0,1309,0C1265.5,0,1222,0,1178,0C1134.5,0,1091,0,1047,0C1003.6,0,960,0,916,0C872.7,0,829,0,785,0C741.8,0,698,0,655,0C610.9,0,567,0,524,0C480,0,436,0,393,0C349.1,0,305,0,262,0C218.2,0,175,0,131,0C87.3,0,44,0,22,0L0,0Z'></path></svg>") !important;
+}
+
+/* Sections */
+[data-theme="dark"] #about,
+[data-theme="dark"] #skills,
+[data-theme="dark"] #portfolio,
+[data-theme="dark"] #experience,
+[data-theme="dark"] #Certificates,
+[data-theme="dark"] #resume,
+[data-theme="dark"] #contact,
+[data-theme="dark"] .page-content,
+[data-theme="dark"] footer {
+  background-color: var(--dm-bg) !important;
+  color: var(--dm-text);
+}
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
+  color: var(--dm-text) !important;
+}
+
+[data-theme="dark"] p,
+[data-theme="dark"] li,
+[data-theme="dark"] span:not(.t-prompt):not(.t-cursor):not(.t-arr):not(.bi):not(.fa) {
+  color: var(--dm-text);
+}
+
+[data-theme="dark"] .text-muted {
+  color: var(--dm-muted) !important;
+}
+
+/* Cards — Bootstrap cards */
+[data-theme="dark"] .card {
+  background-color: var(--dm-surface) !important;
+  border-color: var(--dm-border) !important;
+  color: var(--dm-text);
+}
+
+[data-theme="dark"] .card-body,
+[data-theme="dark"] .card-title,
+[data-theme="dark"] .card-text {
+  color: var(--dm-text) !important;
+}
+
+/* Project and Certificate tile cards */
+[data-theme="dark"] #portfolio .portfolio-item,
+[data-theme="dark"] #Certificates .portfolio-item {
+  background: var(--dm-surface) !important;
+  border-color: var(--dm-border) !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+
+[data-theme="dark"] #portfolio .portfolio-item:hover,
+[data-theme="dark"] #Certificates .portfolio-item:hover {
+  border-color: var(--dm-accent) !important;
+  box-shadow: 0 16px 40px rgba(57,208,200,0.15);
+}
+
+[data-theme="dark"] #portfolio .portfolio-item h4,
+[data-theme="dark"] #Certificates .portfolio-item h4 {
+  color: var(--dm-text) !important;
+}
+
+[data-theme="dark"] #portfolio .portfolio-item p,
+[data-theme="dark"] #portfolio .portfolio-item div,
+[data-theme="dark"] #Certificates .portfolio-item div {
+  color: var(--dm-muted) !important;
+}
+
+[data-theme="dark"] #Certificates .portfolio-item i {
+  background: rgba(57,208,200,0.12) !important;
+  color: var(--dm-accent) !important;
+}
+
+[data-theme="dark"] #Certificates .portfolio-item:hover i {
+  background: var(--dm-accent) !important;
+  color: var(--dm-bg) !important;
+}
+
+/* Resume card */
+[data-theme="dark"] .resume-card {
+  background-color: var(--dm-surface) !important;
+  border-color: var(--dm-border) !important;
+  color: var(--dm-text);
+}
+
+/* Skills section icons — SVGs are black-filled, invert to white in dark mode */
+[data-theme="dark"] .skill-category-icon img {
+  filter: invert(1) opacity(0.85);
+}
+
+/* Skill tags */
+[data-theme="dark"] .skill-tag {
+  background: var(--dm-surface2) !important;
+  color: var(--dm-accent) !important;
+  border: 1px solid var(--dm-border);
+}
+
+/* Timeline */
+[data-theme="dark"] .timeline-card {
+  background: var(--dm-surface) !important;
+  border-color: var(--dm-border) !important;
+}
+
+[data-theme="dark"] .timeline-card * {
+  color: var(--dm-text) !important;
+}
+
+[data-theme="dark"] .timeline-spine::before {
+  background: var(--dm-border) !important;
+}
+
+[data-theme="dark"] .timeline-dot {
+  background: var(--dm-accent) !important;
+  border-color: var(--dm-bg) !important;
+}
+
+[data-theme="dark"] .timeline-label {
+  background: var(--dm-surface2) !important;
+  color: var(--dm-muted) !important;
+  border-color: var(--dm-border) !important;
+}
+
+/* Contact form wrapper and labels */
+[data-theme="dark"] .bg-light {
+  background-color: var(--dm-surface) !important;
+  color: var(--dm-text);
+}
+
+[data-theme="dark"] label,
+[data-theme="dark"] .form-label {
+  color: var(--dm-text) !important;
+}
+
+[data-theme="dark"] .form-control,
+[data-theme="dark"] .form-select {
+  background-color: var(--dm-surface2) !important;
+  border-color: var(--dm-border) !important;
+  color: var(--dm-text) !important;
+}
+
+[data-theme="dark"] .form-control::placeholder {
+  color: var(--dm-muted) !important;
+}
+
+[data-theme="dark"] .form-control:focus,
+[data-theme="dark"] .form-select:focus {
+  background-color: var(--dm-surface2) !important;
+  border-color: var(--dm-accent2) !important;
+  box-shadow: 0 0 0 0.2rem rgba(0,156,144,0.25) !important;
+}
+
+/* Dividers / hr */
+[data-theme="dark"] hr {
+  border-color: var(--dm-border) !important;
+}
+
+/* Footer */
+[data-theme="dark"] footer a {
+  color: var(--dm-muted);
+}
+
+[data-theme="dark"] footer a:hover {
+  color: var(--dm-accent);
+}
+
+/* Scroll-to-top */
+[data-theme="dark"] #scrolltop .btn {
+  background: var(--dm-surface) !important;
+  border-color: var(--dm-border) !important;
+  color: var(--dm-accent) !important;
+}
+
+/* Suppress Bootstrap shadow-sm line on dark navbar when scrolled */
+[data-theme="dark"] #header-nav.shadow-sm {
+  box-shadow: 0 2px 12px rgba(0,0,0,0.4) !important;
+}
+
+/* Navbar toggler in dark */
+[data-theme="dark"] .navbar-toggler {
+  border-color: var(--dm-border) !important;
+}
+
+[data-theme="dark"] .navbar-toggler-icon {
+  filter: invert(1);
+}

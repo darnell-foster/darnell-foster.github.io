@@ -152,4 +152,32 @@
     loop();
   })();
 
+  /* ------------------------------------------------------------------ */
+  /*  Dark mode toggle                                                    */
+  /* ------------------------------------------------------------------ */
+  (function () {
+    var btn  = document.getElementById('theme-toggle');
+    var icon = document.getElementById('theme-icon');
+    if (!btn) return;
+
+    function applyTheme(dark) {
+      if (dark) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        icon.className = 'bi bi-sun-fill';
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+        icon.className = 'bi bi-moon-fill';
+      }
+    }
+
+    /* Sync icon with whatever FOUC script set */
+    applyTheme(document.documentElement.getAttribute('data-theme') === 'dark');
+
+    btn.addEventListener('click', function () {
+      var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      applyTheme(!isDark);
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    });
+  })();
+
 })();
