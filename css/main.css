@@ -169,7 +169,7 @@ body { background-color: #fff; }
   transform-origin: top;
   animation: animateWave 2000ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
   background-color: #fff;
-  background-image: url("../images/wave-bg.svg");
+  background-image: url("../images/illustrations/wave-bg.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -649,12 +649,7 @@ footer a:not(.nav-link) {
   margin: 0 auto;
 }
 
-.text-small { font-size: 0.875rem; }
-
 .text-uppercase { letter-spacing: 0.05em; }
-
-.hover-effect { transition: transform 0.18s ease-in-out; }
-.hover-effect:hover { transform: translateY(-2px); }
 
 /* Section heading markers */
 .marker {
@@ -690,8 +685,6 @@ footer a:not(.nav-link) {
     margin-left: -60px;
   }
 }
-
-.entry-title a { text-decoration: none; }
 
 /* =====================================================================
    SCROLL TO TOP
@@ -810,6 +803,10 @@ a.btn { text-decoration: none; }
   --dm-accent2:  #009c90;
 }
 
+[data-theme="dark"] html {
+  background-color: var(--dm-bg);
+}
+
 [data-theme="dark"] body {
   background-color: var(--dm-bg);
   color: var(--dm-text);
@@ -860,6 +857,11 @@ header.bg-light,
 }
 
 /* Hero / cover — matches navbar (#161b22) above and wave fill (#161b22) below */
+/* Also override the outer <header> wrapper which has no explicit dark bg */
+[data-theme="dark"] #content > header {
+  background-color: var(--dm-surface) !important;
+}
+
 [data-theme="dark"] .cover {
   background: var(--dm-surface) !important;
 }
@@ -874,11 +876,6 @@ header.bg-light,
 [data-theme="dark"] .hero-terminal {
   background: #0a0e14;
   border-color: var(--dm-border);
-}
-
-[data-theme="dark"] .terminal-header {
-  background: #161b22;
-  border-bottom-color: var(--dm-border);
 }
 
 /* Wave — hide in dark mode, not needed */
@@ -1006,11 +1003,7 @@ header.bg-light,
   border-color: var(--dm-bg) !important;
 }
 
-[data-theme="dark"] .timeline-label {
-  background: var(--dm-surface2) !important;
-  color: var(--dm-muted) !important;
-  border-color: var(--dm-border) !important;
-}
+
 
 /* Contact form wrapper and labels */
 [data-theme="dark"] .bg-light {

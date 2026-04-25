@@ -50,9 +50,10 @@
       {
         cmd: 'cat interests.txt',
         output: [
-          { arrow: true, text: 'Security & Systems' },
-          { arrow: true, text: 'Full Stack Development' },
-          { arrow: true, text: 'DevOps & Infrastructure' },
+          { arrow: true, text: 'Cybersecurity' },
+          { arrow: true, text: 'Software Development' },
+          { arrow: true, text: 'Cloud & DevOps' },
+          { arrow: true, text: 'Problem Solving' },
           { arrow: true, text: 'Always Learning' }
         ]
       }
